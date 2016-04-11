@@ -1,0 +1,50 @@
+{
+  "name": "Vendor",
+  "plural": "Vendors",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "geoCoordinates": {
+      "type": "object"
+    },
+    "description": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "societies": {
+      "type": "hasAndBelongsToMany",
+      "model": "Society",
+      "foreignKey": "societyId"
+    },
+    "vendorCategories": {
+      "type": "hasAndBelongsToMany",
+      "model": "VendorCategory",
+      "foreignKey": "vendorCategoryId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

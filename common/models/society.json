@@ -1,0 +1,42 @@
+{
+  "name": "Society",
+  "plural": "Societies",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "geoCoordinates": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "users": {
+      "type": "hasMany",
+      "model": "user",
+      "foreignKey": "societyId"
+    },
+    "vendors": {
+      "type": "hasAndBelongsToMany",
+      "model": "Vendor",
+      "foreignKey": "societyId"
+    },
+    "feeds": {
+      "type": "hasMany",
+      "model": "Feed",
+      "foreignKey": "societyId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

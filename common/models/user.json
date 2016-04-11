@@ -1,0 +1,51 @@
+{
+  "name": "user",
+  "plural": "users",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "age": {
+      "type": "number"
+    },
+    "sex": {
+      "type": "string"
+    },
+    "profession": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "society": {
+      "type": "belongsTo",
+      "model": "Society",
+      "foreignKey": "societyId"
+    },
+    "interests": {
+      "type": "hasAndBelongsToMany",
+      "model": "Interest",
+      "foreignKey": "interestId"
+    },
+    "feeds": {
+      "type": "hasMany",
+      "model": "Feed",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

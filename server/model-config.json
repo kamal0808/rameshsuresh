@@ -31,5 +31,29 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Society": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Vendor": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Interest": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Feed": {
+    "dataSource": "db",
+    "public": true
+  },
+  "VendorCategory": {
+    "dataSource": "db",
+    "public": true
+  },
+  "user": {
+    "dataSource": "db",
+    "public": true
   }
 }
